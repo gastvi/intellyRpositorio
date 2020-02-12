@@ -12,28 +12,30 @@ public class Conta {
         this.cliente = nomeDoCliente;
     }
 
-    public double deposito(double deposito) {
+    public void deposito(double deposito) {
         if(deposito > 0) {
-            saldo = saldo + deposito;
+            this.saldo = this.saldo + deposito;
             System.out.println("deposito feito com sucessos");
-            System.out.println("saldo da conta atual"+": " + saldo);
         } else{
             System.out.println("valor invalido para deposito");
-            System.out.println("saldo da conta atual"+": " + saldo);
         }
-        return saldo;
+        System.out.println("saldo da conta atual: " + this.saldo);
     }
 
     public double saque(double saque) {
-        if (saldo >= saque) {
-            saldo = saldo - saque;
+        if (this.saldo >= saque) {
+            this.saldo = this.saldo - saque;
             System.out.println("saque feito com sucesso");
-            System.out.println("saldo da conta atual"+": " + saldo);
+            System.out.println("saldo da conta atual"+": " + this.saldo);
         } else {
             System.out.println("seu saldo é inferior ao saque que quer realizar");
-            System.out.println("saldo da conta atual"+": " + saldo);
+            System.out.println("saldo da conta atual"+": " + this.saldo);
         }
-        return saldo;
+        return this.saldo;
+    }
+
+    public void verificarConta(){
+        System.out.println("dinheiro atual: "+ this.saldo);
     }
 
 
